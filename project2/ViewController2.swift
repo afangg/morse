@@ -54,9 +54,16 @@ class ViewController2: UIViewController, UITextViewDelegate {
         
         convertEnglishToMorse()
         
-        for word in morseArray
+        for index in 0..<morseArray.count
         {
-            morseText.text.append(" " + word + " ")
+            //if (index == (morseArray.count-1) || index == (0)) && morseArray[index] == "/"{}
+            if index > 0 && index < (morseArray.count-1)
+                && (morseArray[index] == "/" && morseArray[index+1] == "/")
+                || (morseArray[index] != "/" && morseArray[index+1] == "/") {}
+            else
+            {
+                morseText.text.append(" " + morseArray[index] + " ")
+            }
         }
  
     }
@@ -68,9 +75,13 @@ class ViewController2: UIViewController, UITextViewDelegate {
         
         convertMorseToEnglish()
 
-        for word in engArray
+        for index in 0..<engArray.count
         {
-            englishText.text.append(word)
+            if index == (engArray.count-1) && engArray[index] == " "{}
+            else
+            {
+                englishText.text.append(" " + engArray[index] + " ")
+            }
         }
 
     }
@@ -96,7 +107,7 @@ class ViewController2: UIViewController, UITextViewDelegate {
                 sound(name: "beep", type: "mp3")
                 print("dot")
             }
-            else if symbol == "_"
+            else if symbol == "-"
             {
                 sound(name: "longBeep", type: "mp3")
                 print("dash")
@@ -127,57 +138,77 @@ class ViewController2: UIViewController, UITextViewDelegate {
             switch character
             {
             case "a":
-                morseArray.append("._")
+                morseArray.append(".-")
             case "b":
-                morseArray.append("_...")
+                morseArray.append("-...")
             case "c":
-                morseArray.append("_._.")
+                morseArray.append("-.-.")
             case "d":
-                morseArray.append("_..")
+                morseArray.append("-..")
             case "e":
                 morseArray.append(".")
             case "f":
-                morseArray.append(".._.")
+                morseArray.append("..-.")
             case "g":
-                morseArray.append("__.")
+                morseArray.append("--.")
             case "h":
                 morseArray.append("....")
             case "i":
                 morseArray.append("..")
             case "j":
-                morseArray.append(".___")
+                morseArray.append(".---")
             case "k":
-                morseArray.append("._..")
+                morseArray.append(".-..")
             case "l":
-                morseArray.append("._..")
+                morseArray.append(".-..")
             case "m":
-                morseArray.append("__")
+                morseArray.append("--")
             case "n":
-                morseArray.append("_.")
+                morseArray.append("-.")
             case "o":
-                morseArray.append("___")
+                morseArray.append("---")
             case "p":
-                morseArray.append(".__.")
+                morseArray.append(".--.")
             case "q":
-                morseArray.append("__._")
+                morseArray.append("--.-")
             case "r":
-                morseArray.append("._.")
+                morseArray.append(".-.")
             case "s":
                 morseArray.append("...")
             case "t":
-                morseArray.append("_")
+                morseArray.append("-")
             case "u":
-                morseArray.append(".._")
+                morseArray.append("..-")
             case "v":
-                morseArray.append("..._")
+                morseArray.append("...-")
             case "w":
-                morseArray.append(".__")
+                morseArray.append(".--")
             case "x":
-                morseArray.append("_.._")
+                morseArray.append("-..-")
             case "y":
-                morseArray.append("_.__")
+                morseArray.append("-.--")
             case "z":
-                morseArray.append("__..")
+                morseArray.append("--..")
+            case "1":
+                morseArray.append(".---")
+            case "2":
+                morseArray.append("..---")
+            case "3":
+                morseArray.append("...--")
+            case "4":
+                morseArray.append("....-")
+            case "5":
+                morseArray.append(".....")
+            case "6":
+                morseArray.append("-....")
+            case "7":
+                morseArray.append("--...")
+            case "8":
+                morseArray.append("---..")
+            case "9":
+                morseArray.append("----.")
+            case "0":
+                morseArray.append("-----")
             case " ":
                 morseArray.append("/")
             default:
@@ -196,58 +227,78 @@ class ViewController2: UIViewController, UITextViewDelegate {
         
         switch character
         {
-        case "._":
+        case ".-":
             engArray.append("a")
-        case "_...":
+        case "-...":
             engArray.append("b")
-        case "_._.":
+        case "-.-.":
             engArray.append("c")
-        case "_..":
+        case "-..":
             engArray.append("d")
         case ".":
             engArray.append("e")
-        case ".._.":
+        case "..-.":
             engArray.append("f")
-        case "__.":
+        case "--.":
             engArray.append("g")
         case "....":
             engArray.append("h")
         case "..":
             engArray.append("i")
-        case ".___":
+        case ".---":
             engArray.append("j")
-        case "._..":
+        case ".-..":
             engArray.append("k")
-        case "._..":
+        case ".-..":
             engArray.append("l")
-        case "__":
+        case "--":
             engArray.append("m")
-        case "_.":
+        case "-.":
             engArray.append("n")
-        case "___":
+        case "---":
             engArray.append("o")
-        case ".__.":
+        case ".--.":
             engArray.append("p")
-        case "__._":
+        case "--.-":
             engArray.append("q")
-        case "._.":
+        case ".-.":
             engArray.append("r")
         case "...":
             engArray.append("s")
-        case "_":
+        case "-":
             engArray.append("t")
-        case ".._":
+        case "..-":
             engArray.append("u")
-        case "..._":
+        case "...-":
             engArray.append("v")
-        case ".__":
+        case ".--":
             engArray.append("w")
-        case "_.._":
+        case "-..-":
             engArray.append("x")
-        case "_.__":
+        case "-.--":
             engArray.append("y")
-        case "__..":
+        case "--..":
             engArray.append("z")
+        case ".---":
+            morseArray.append("1")
+        case "..---":
+            morseArray.append("2")
+        case "...--":
+            morseArray.append("3")
+        case "....-":
+            morseArray.append("4")
+        case ".....":
+            morseArray.append("5")
+        case "-....":
+            morseArray.append("6")
+        case "--...":
+            morseArray.append("7")
+        case "---..":
+            morseArray.append("8")
+        case "----.":
+            morseArray.append("9")
+        case "-----":
+            morseArray.append("0")
         case "/":
             engArray.append(" ")
         case "":
