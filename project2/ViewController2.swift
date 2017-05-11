@@ -30,6 +30,7 @@ class ViewController2: UIViewController, UITextViewDelegate {
         englishText.delegate = self
         morseText.delegate = self
         
+        
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
@@ -92,33 +93,28 @@ class ViewController2: UIViewController, UITextViewDelegate {
         {
             if symbol == "."
             {
-                timer = Timer(timeInterval: 0.5, target: self, selector: #selector(sound), userInfo: nil, repeats: false)
+                sound(name: "beep", type: "mp3")
                 print("dot")
             }
             else if symbol == "_"
             {
-                timer = Timer(timeInterval: 1, target: self, selector: #selector(sound), userInfo: nil, repeats: false)
+                sound(name: "longBeep", type: "mp3")
                 print("dash")
             }
+            Thread.sleep(forTimeInterval: 0.5)
         }
 
     }
     
-    func sound()
+    func sound(name: String, type: String)
     {
-//        let path = Bundle.main.path(forResource: "beep", ofType: "mp3")
-//        let url = NSURL.fileURL(withPath: path!)
-//        do {
-//           try audioPlayer = AVAudioPlayer(contentsOf: url)
-//            audioPlayer.play()
-//        }
-//        catch { print("Player not available") }
-        let url = NSURL(fileURLWithPath: Bundle.main.path(forResource: "beep", ofType: "wav")!)
+        
+        let url = NSURL(fileURLWithPath: Bundle.main.path(forResource: name, ofType: type)!)
         do {
                        try audioPlayer = AVAudioPlayer(contentsOf: url as URL, fileTypeHint: AVFileTypeWAVE)
                         audioPlayer.play()
                     }
-                    catch { print("Player not available") }
+        catch { print("Player not available") }
     
     }
     
