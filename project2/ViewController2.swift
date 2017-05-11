@@ -14,9 +14,12 @@ class ViewController2: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var englishText: UITextView!
     @IBOutlet weak var morseText: UITextView!
+    
     var morseArray = [String]()
+    var engArray = [String]()
+
     var timer = Timer()
-    var audioPlayer = AVAudioPlayer()
+    var audioPlayer : AVAudioPlayer! = nil
     
     var english = ""
     var morse = ""
@@ -25,13 +28,14 @@ class ViewController2: UIViewController, UITextViewDelegate {
     {
         super.viewDidLoad()
         englishText.delegate = self
-
+        morseText.delegate = self
         
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if text == "\n" {
             englishText.resignFirstResponder()
+            morseText.resignFirstResponder()
             return false
         }
         return true
@@ -39,12 +43,12 @@ class ViewController2: UIViewController, UITextViewDelegate {
 
     
     
-    @IBAction func convert(_ sender: Any)
-    {
-        englishText.resignFirstResponder()
 
+    @IBAction func convertEtoM(_ sender: Any) {
+        englishText.resignFirstResponder()
         english = englishText.text.lowercased()
         morseArray.removeAll()
+        
         morseText.text = ""
         
         convertEnglishToMorse()
@@ -53,17 +57,32 @@ class ViewController2: UIViewController, UITextViewDelegate {
         {
             morseText.text.append(" " + word + " ")
         }
+ 
+    }
+    
+    @IBAction func convertMtoE(_ sender: Any) {
+        morseText.resignFirstResponder()
+        engArray.removeAll()
+        englishText.text = ""
+        
+        convertMorseToEnglish()
+
+        for word in engArray
+        {
+            englishText.text.append(word)
+        }
+
     }
     
     @IBAction func playSound(_ sender: Any)
     {
         
-        makeVibration()
+        playBeep()
     }
     
 
     
-    func makeVibration()
+    func playBeep()
     {
         var symbolArray = [Character]()
         for code in morseArray
@@ -73,12 +92,12 @@ class ViewController2: UIViewController, UITextViewDelegate {
         {
             if symbol == "."
             {
-                timer = Timer(timeInterval: 0.01, target: self, selector: #selector(sound), userInfo: nil, repeats: false)
+                timer = Timer(timeInterval: 0.5, target: self, selector: #selector(sound), userInfo: nil, repeats: false)
                 print("dot")
             }
             else if symbol == "_"
             {
-                timer = Timer(timeInterval: 0.05, target: self, selector: #selector(sound), userInfo: nil, repeats: false)
+                timer = Timer(timeInterval: 1, target: self, selector: #selector(sound), userInfo: nil, repeats: false)
                 print("dash")
             }
         }
@@ -87,19 +106,27 @@ class ViewController2: UIViewController, UITextViewDelegate {
     
     func sound()
     {
-        let path = Bundle.main.path(forResource: "beep", ofType: "mp3")
-        let url = NSURL.fileURL(withPath: path!)
+//        let path = Bundle.main.path(forResource: "beep", ofType: "mp3")
+//        let url = NSURL.fileURL(withPath: path!)
+//        do {
+//           try audioPlayer = AVAudioPlayer(contentsOf: url)
+//            audioPlayer.play()
+//        }
+//        catch { print("Player not available") }
+        let url = NSURL(fileURLWithPath: Bundle.main.path(forResource: "beep", ofType: "wav")!)
         do {
-            audioPlayer =  try AVAudioPlayer(contentsOf: url)
-            audioPlayer.play()
-        }
-        catch { print("Player not available") }    }
+                       try audioPlayer = AVAudioPlayer(contentsOf: url as URL, fileTypeHint: AVFileTypeWAVE)
+                        audioPlayer.play()
+                    }
+                    catch { print("Player not available") }
+    
+    }
     
     
     func convertEnglishToMorse()
     {
-        let englishArray = Array(english.characters)
-        for character in englishArray
+        let tempArray = Array(english.characters)
+        for character in tempArray
         {
             switch character
             {
@@ -165,4 +192,75 @@ class ViewController2: UIViewController, UITextViewDelegate {
         
     }
     
+    func convertMorseToEnglish()
+    {
+        let tempArray = morseText.text.components(separatedBy: " ")
+        print(tempArray)
+        for character in tempArray{
+        
+        switch character
+        {
+        case "._":
+            engArray.append("a")
+        case "_...":
+            engArray.append("b")
+        case "_._.":
+            engArray.append("c")
+        case "_..":
+            engArray.append("d")
+        case ".":
+            engArray.append("e")
+        case ".._.":
+            engArray.append("f")
+        case "__.":
+            engArray.append("g")
+        case "....":
+            engArray.append("h")
+        case "..":
+            engArray.append("i")
+        case ".___":
+            engArray.append("j")
+        case "._..":
+            engArray.append("k")
+        case "._..":
+            engArray.append("l")
+        case "__":
+            engArray.append("m")
+        case "_.":
+            engArray.append("n")
+        case "___":
+            engArray.append("o")
+        case ".__.":
+            engArray.append("p")
+        case "__._":
+            engArray.append("q")
+        case "._.":
+            engArray.append("r")
+        case "...":
+            engArray.append("s")
+        case "_":
+            engArray.append("t")
+        case ".._":
+            engArray.append("u")
+        case "..._":
+            engArray.append("v")
+        case ".__":
+            engArray.append("w")
+        case "_.._":
+            engArray.append("x")
+        case "_.__":
+            engArray.append("y")
+        case "__..":
+            engArray.append("z")
+        case "/":
+            engArray.append(" ")
+        case "":
+            engArray.append("")
+        default:
+            engArray.append("?")
+
+            }
+        }
+    
+    }
 }

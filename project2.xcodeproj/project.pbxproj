@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7E4C90F41EC2DA3C007EB735 /* beep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7E4C90F31EC2DA3C007EB735 /* beep.wav */; };
+		7E4C90FE1EC3C1C7007EB735 /* beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7E4C90FD1EC3C1C7007EB735 /* beep.mp3 */; };
 		EFEEC3E61EC0D0E100CBFF82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEEC3E51EC0D0E100CBFF82 /* AppDelegate.swift */; };
 		EFEEC3E81EC0D0E100CBFF82 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEEC3E71EC0D0E100CBFF82 /* ViewController.swift */; };
 		EFEEC3EB1EC0D0E100CBFF82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFEEC3E91EC0D0E100CBFF82 /* Main.storyboard */; };
@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7E4C90F31EC2DA3C007EB735 /* beep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = beep.wav; sourceTree = "<group>"; };
+		7E4C90FD1EC3C1C7007EB735 /* beep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beep.mp3; sourceTree = "<group>"; };
 		EFEEC3E21EC0D0E100CBFF82 /* project2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = project2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFEEC3E51EC0D0E100CBFF82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFEEC3E71EC0D0E100CBFF82 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,7 +64,7 @@
 				EFEEC3E91EC0D0E100CBFF82 /* Main.storyboard */,
 				EFEEC3EC1EC0D0E100CBFF82 /* Assets.xcassets */,
 				EFEEC3EE1EC0D0E100CBFF82 /* LaunchScreen.storyboard */,
-				7E4C90F31EC2DA3C007EB735 /* beep.wav */,
+				7E4C90FD1EC3C1C7007EB735 /* beep.mp3 */,
 				EFEEC3F11EC0D0E100CBFF82 /* Info.plist */,
 			);
 			path = project2;
@@ -130,9 +130,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E4C90F41EC2DA3C007EB735 /* beep.wav in Resources */,
 				EFEEC3F01EC0D0E100CBFF82 /* LaunchScreen.storyboard in Resources */,
 				EFEEC3ED1EC0D0E100CBFF82 /* Assets.xcassets in Resources */,
+				7E4C90FE1EC3C1C7007EB735 /* beep.mp3 in Resources */,
 				EFEEC3EB1EC0D0E100CBFF82 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
