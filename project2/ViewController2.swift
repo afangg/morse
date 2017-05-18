@@ -54,10 +54,15 @@ class ViewController2: UIViewController, UITextViewDelegate {
         
         convertEnglishToMorse()
         
-        for code in morseArray
+        for index in 0..<morseArray.count
         {
-            morseText.text.append(" " + code + " ")
-
+            if index != morseArray.count-1 && index != 0
+                && morseArray[index] == "/" && morseArray[index+1] == "/"{}
+            else if (index == morseArray.count-1) && morseArray[index] == "/" {}
+            else
+            {
+                morseText.text.append(" " + morseArray[index] + " ")
+            }
         }
  
     }
@@ -71,11 +76,14 @@ class ViewController2: UIViewController, UITextViewDelegate {
 
         for index in 0..<engArray.count
         {
-            if index == (engArray.count-1) && engArray[index] == " "{}
+            if index != engArray.count-1 && index != 0
+                && engArray[index] == " " && engArray[index+1] == " "{}
+            else if index == engArray.count-1 && engArray[index] == " " {}
             else
             {
-                englishText.text.append(" " + engArray[index] + " ")
+                englishText.text.append(engArray[index])
             }
+            
         }
 
     }
@@ -127,26 +135,7 @@ class ViewController2: UIViewController, UITextViewDelegate {
     func convertEnglishToMorse()
     {
         var tempArray = Array(english.characters)
-        
-//        var index1 = 0
-//        var index2 = tempArray.count-2
-//        var remove = 0
-//        repeat
-//        {
-//         tempArray.remove(at: index1)
-//            index1+=1
-//        }
-//        while tempArray[index1] == " "
-//        
-//        repeat
-//        {
-//            tempArray.remove(at: index2)
-//            print("remove")
-//            remove += 1
-//            index2 = tempArray.count-remove
-//        }
-//        while tempArray[index2] == " "
-//    
+        var length = tempArray.count-1
         
         for character in tempArray
         {
@@ -226,6 +215,7 @@ class ViewController2: UIViewController, UITextViewDelegate {
                 morseArray.append("-----")
             case " ":
                 morseArray.append("/")
+            case ".": break
             default:
                 morseArray.append("?")
             }
@@ -237,7 +227,6 @@ class ViewController2: UIViewController, UITextViewDelegate {
     func convertMorseToEnglish()
     {
         let tempArray = morseText.text.components(separatedBy: " ")
-        print(tempArray)
         for character in tempArray{
         
         switch character

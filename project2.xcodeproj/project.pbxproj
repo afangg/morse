@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7E4C90FE1EC3C1C7007EB735 /* beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7E4C90FD1EC3C1C7007EB735 /* beep.mp3 */; };
+		EF6842931ECE1A720060224E /* Rules.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6842921ECE1A720060224E /* Rules.swift */; };
 		EFD3DA421EC4D39400827B3E /* longBeep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFD3DA411EC4D39400827B3E /* longBeep.mp3 */; };
 		EFEEC3E61EC0D0E100CBFF82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEEC3E51EC0D0E100CBFF82 /* AppDelegate.swift */; };
 		EFEEC3E81EC0D0E100CBFF82 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEEC3E71EC0D0E100CBFF82 /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		7E4C90FD1EC3C1C7007EB735 /* beep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beep.mp3; sourceTree = "<group>"; };
+		EF6842921ECE1A720060224E /* Rules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rules.swift; sourceTree = "<group>"; };
 		EFD3DA411EC4D39400827B3E /* longBeep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = longBeep.mp3; path = ../../longBeep.mp3; sourceTree = "<group>"; };
 		EFEEC3E21EC0D0E100CBFF82 /* project2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = project2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFEEC3E51EC0D0E100CBFF82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				EFEEC3E51EC0D0E100CBFF82 /* AppDelegate.swift */,
 				EFEEC3E71EC0D0E100CBFF82 /* ViewController.swift */,
 				EFEEC3F71EC0D3BD00CBFF82 /* ViewController2.swift */,
+				EF6842921ECE1A720060224E /* Rules.swift */,
 				EFEEC3E91EC0D0E100CBFF82 /* Main.storyboard */,
 				EFEEC3EC1EC0D0E100CBFF82 /* Assets.xcassets */,
 				EFEEC3EE1EC0D0E100CBFF82 /* LaunchScreen.storyboard */,
@@ -149,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFEEC3E81EC0D0E100CBFF82 /* ViewController.swift in Sources */,
+				EF6842931ECE1A720060224E /* Rules.swift in Sources */,
 				EFEEC3E61EC0D0E100CBFF82 /* AppDelegate.swift in Sources */,
 				EFEEC3F81EC0D3BD00CBFF82 /* ViewController2.swift in Sources */,
 			);
