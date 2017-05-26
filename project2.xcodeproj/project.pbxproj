@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7E4C90FE1EC3C1C7007EB735 /* beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7E4C90FD1EC3C1C7007EB735 /* beep.mp3 */; };
+		7E8040411ED7F6D400D526F1 /* longBeep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7E8040401ED7F6D400D526F1 /* longBeep.mp3 */; };
+		7E8040431ED7F6FD00D526F1 /* beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7E8040421ED7F6FD00D526F1 /* beep.mp3 */; };
 		EF6842931ECE1A720060224E /* Rules.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6842921ECE1A720060224E /* Rules.swift */; };
-		EFD3DA421EC4D39400827B3E /* longBeep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFD3DA411EC4D39400827B3E /* longBeep.mp3 */; };
 		EFEEC3E61EC0D0E100CBFF82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEEC3E51EC0D0E100CBFF82 /* AppDelegate.swift */; };
 		EFEEC3E81EC0D0E100CBFF82 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEEC3E71EC0D0E100CBFF82 /* ViewController.swift */; };
 		EFEEC3EB1EC0D0E100CBFF82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFEEC3E91EC0D0E100CBFF82 /* Main.storyboard */; };
@@ -19,9 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7E4C90FD1EC3C1C7007EB735 /* beep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beep.mp3; sourceTree = "<group>"; };
+		7E8040401ED7F6D400D526F1 /* longBeep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = longBeep.mp3; sourceTree = "<group>"; };
+		7E8040421ED7F6FD00D526F1 /* beep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beep.mp3; sourceTree = "<group>"; };
 		EF6842921ECE1A720060224E /* Rules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rules.swift; sourceTree = "<group>"; };
-		EFD3DA411EC4D39400827B3E /* longBeep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = longBeep.mp3; path = ../../longBeep.mp3; sourceTree = "<group>"; };
 		EFEEC3E21EC0D0E100CBFF82 /* project2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = project2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFEEC3E51EC0D0E100CBFF82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFEEC3E71EC0D0E100CBFF82 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,8 +69,8 @@
 				EFEEC3E91EC0D0E100CBFF82 /* Main.storyboard */,
 				EFEEC3EC1EC0D0E100CBFF82 /* Assets.xcassets */,
 				EFEEC3EE1EC0D0E100CBFF82 /* LaunchScreen.storyboard */,
-				7E4C90FD1EC3C1C7007EB735 /* beep.mp3 */,
-				EFD3DA411EC4D39400827B3E /* longBeep.mp3 */,
+				7E8040421ED7F6FD00D526F1 /* beep.mp3 */,
+				7E8040401ED7F6D400D526F1 /* longBeep.mp3 */,
 				EFEEC3F11EC0D0E100CBFF82 /* Info.plist */,
 			);
 			path = project2;
@@ -137,9 +137,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFEEC3F01EC0D0E100CBFF82 /* LaunchScreen.storyboard in Resources */,
+				7E8040431ED7F6FD00D526F1 /* beep.mp3 in Resources */,
 				EFEEC3ED1EC0D0E100CBFF82 /* Assets.xcassets in Resources */,
-				7E4C90FE1EC3C1C7007EB735 /* beep.mp3 in Resources */,
-				EFD3DA421EC4D39400827B3E /* longBeep.mp3 in Resources */,
+				7E8040411ED7F6D400D526F1 /* longBeep.mp3 in Resources */,
 				EFEEC3EB1EC0D0E100CBFF82 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QaD-Al-774">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QaD-Al-774">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -139,6 +139,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POm-dW-LLY">
                                 <rect key="frame" x="135" y="463" width="50" height="50"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="POm-dW-LLY" secondAttribute="height" multiplier="1:1" id="Cg5-rl-hfe"/>
                                     <constraint firstAttribute="height" constant="50" id="Chk-wd-NzK"/>
@@ -147,6 +148,9 @@
                                 <state key="normal" title="Play Sound" image="play">
                                     <color key="titleColor" red="1" green="0.91592482529999997" blue="0.89085232709999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Wbb-Sh-RhU" appends="YES" id="5yh-vT-26x"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRT-mu-2vu">
                                 <rect key="frame" x="274" y="518" width="30" height="30"/>
@@ -200,6 +204,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MKg-pa-IkS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Wbb-Sh-RhU">
+                    <connections>
+                        <action selector="playSound:" destination="hye-WP-T7M" id="cDG-gd-2Sh"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1998.75" y="137.32394366197184"/>
         </scene>

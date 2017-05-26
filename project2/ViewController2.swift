@@ -58,7 +58,9 @@ class ViewController2: UIViewController, UITextViewDelegate {
         {
             if index != morseArray.count-1 && index != 0
                 && morseArray[index] == "/" && morseArray[index+1] == "/"{}
+                
             else if (index == morseArray.count-1) && morseArray[index] == "/" {}
+                
             else
             {
                 morseText.text.append(" " + morseArray[index] + " ")
@@ -71,6 +73,7 @@ class ViewController2: UIViewController, UITextViewDelegate {
         morseText.resignFirstResponder()
         engArray.removeAll()
         englishText.text = ""
+        morseArray = morseText.text.components(separatedBy: "/")
         
         convertMorseToEnglish()
 
@@ -78,7 +81,9 @@ class ViewController2: UIViewController, UITextViewDelegate {
         {
             if index != engArray.count-1 && index != 0
                 && engArray[index] == " " && engArray[index+1] == " "{}
+                
             else if index == engArray.count-1 && engArray[index] == " " {}
+                
             else
             {
                 englishText.text.append(engArray[index])
@@ -114,7 +119,7 @@ class ViewController2: UIViewController, UITextViewDelegate {
                 sound(name: "longBeep", type: "mp3")
                 print("dash")
             }
-            Thread.sleep(forTimeInterval: 0.5)
+            Thread.sleep(forTimeInterval: 0.1)
         }
 
     }
@@ -124,7 +129,7 @@ class ViewController2: UIViewController, UITextViewDelegate {
         
         let url = NSURL(fileURLWithPath: Bundle.main.path(forResource: name, ofType: type)!)
         do {
-                       try audioPlayer = AVAudioPlayer(contentsOf: url as URL, fileTypeHint: AVFileTypeWAVE)
+                       try audioPlayer = AVAudioPlayer(contentsOf: url as URL, fileTypeHint: AVFileTypeMPEGLayer3)
                         audioPlayer.play()
                     }
         catch { print("Player not available") }
