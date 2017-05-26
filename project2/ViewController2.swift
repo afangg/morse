@@ -30,6 +30,9 @@ class ViewController2: UIViewController, UITextViewDelegate {
         englishText.delegate = self
         morseText.delegate = self
         
+        englishText.contentOffset = .zero
+        morseText.contentOffset = .zero
+        
         
     }
     
